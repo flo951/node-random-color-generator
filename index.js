@@ -7,7 +7,7 @@ const lumInput = process.argv[3];
 
 if (!process.argv[2]) {
   console.log(
-    chalk.hex(`${randomColor()}`)(
+    chalk.hex(color)(
       `###############################
 ###############################
 ###############################
@@ -20,17 +20,17 @@ if (!process.argv[2]) {
     ),
   );
 } else if (process.argv[2] && process.argv[3]) {
+  let userColor = randomColor({
+    luminosity: lumInput,
+    hue: colorInput,
+  });
+
   console.log(
-    chalk.hex(
-      `${randomColor({
-        luminosity: lumInput,
-        hue: colorInput,
-      })}`,
-    )(`###############################
+    chalk.hex(userColor)(`###############################
 ###############################
 ###############################
 ####                       ####
-####        ${color}        ####
+####        ${userColor}        ####
 ####                       ####
 ###############################
 ###############################
