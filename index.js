@@ -20,8 +20,26 @@ if (!process.argv[2]) {
     ),
   );
 } else if (process.argv[2] && process.argv[3]) {
-  let userColor = randomColor({
+  const userHueLum = randomColor({
     luminosity: lumInput,
+    hue: colorInput,
+  });
+
+  console.log(
+    chalk.hex(userHueLum)(`###############################
+###############################
+###############################
+####                       ####
+####        ${userHueLum}        ####
+####                       ####
+###############################
+###############################
+###############################`),
+  );
+} else if (process.argv[2] === 'ask') {
+  console.log(chalk.red('Type in a color and luminosity'.toUpperCase()));
+} else if (process.argv[2] !== 'ask') {
+  const userColor = randomColor({
     hue: colorInput,
   });
 
@@ -36,6 +54,4 @@ if (!process.argv[2]) {
 ###############################
 ###############################`),
   );
-} else if (process.argv[2] === 'ask') {
-  console.log(chalk.red('Type in a color and luminosity'.toUpperCase()));
 }
