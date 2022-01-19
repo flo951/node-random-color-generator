@@ -2,8 +2,8 @@ import randomColor from 'randomcolor'; // import the script
 import chalk from 'chalk';
 const color = randomColor().toUpperCase(); // a hex code for an attractive color: ;
 
-const colorInput = process.argv[2];
-const lumInput = process.argv[3];
+const colorInput = process.argv[2]; // stores the command line input in a variable
+const lumInput = process.argv[3]; // stores the command line input in a variable
 
 if (!process.argv[2]) {
   console.log(
@@ -55,3 +55,9 @@ if (!process.argv[2]) {
 ###############################`),
   );
 }
+
+/*
+
+
+
+*/
